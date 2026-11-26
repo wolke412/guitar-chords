@@ -31,3 +31,5 @@ Execute o [notebook de pré-processamento](notebooks/preprocessing.ipynb) pelo J
 O notebook filtra as seis classes, remove duplicatas exatas, divide `FINGER_POSITIONS` em seis colunas categóricas e analisa combinações ambíguas de raiz e posição dos dedos. Sua conclusão registra as escolhas de pré-processamento adotadas nos experimentos.
 
 O CSV `data/processed/chords_six_classes.csv` é gerado para consultas futuras e não é utilizado na experimentação. Para reproduzir o procedimento dos testes, o notebook de experimentação lê o CSV original em `data/raw/chord-fingers.csv`, refaz o pré-processamento e ajusta a codificação one-hot apenas com os dados de treino de cada fold.
+
+A seção final do notebook de experimentação treina os três pipelines com as 959 instâncias, salva os modelos em `models/` e mostra como carregar um deles e prever a classe a partir de `CHORD_ROOT` e `STRING_1` a `STRING_6`. Os arquivos salvos foram gerados com scikit-learn 1.9.1 e joblib 1.6.0. Use essas versões para carregá-los.
